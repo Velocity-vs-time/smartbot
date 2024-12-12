@@ -1,0 +1,35 @@
+version: "3.8"
+services:
+  camera:
+    build: ./camera
+    volumes:
+      - ./data:/data
+
+  openai:
+    build: ./openai
+    volumes:
+      - ./data:/data
+    environment:
+      - OPENAI_API_KEY=your-openai-api-key
+
+  robot_control:
+    build: ./robot_control
+    privileged: true  # Allows GPIO access
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
